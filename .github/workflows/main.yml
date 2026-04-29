@@ -1,0 +1,22 @@
+name: C Build Test
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Show files
+        run: ls -l
+
+      - name: Build
+        run: make
+
+      - name: Run
+        run: ./main
